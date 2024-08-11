@@ -1,5 +1,7 @@
 package com.erp.models;
 
+import java.util.ArrayList;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,12 +14,13 @@ import jakarta.persistence.Table;
 public class ProductCategory {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="category_id")
 	private Long id;
 	@Column(nullable = false, length = 50)
 	private String name;
 	
+	private ArrayList <Product> productList = new ArrayList<Product>();
 	
 	public Long getId() {
 		return id;

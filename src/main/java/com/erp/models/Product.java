@@ -6,7 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinTable;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,14 +14,14 @@ import jakarta.persistence.Table;
 public class Product {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="product_id")
     private long id;
 	@Column(nullable = false, length = 50)
     private String name;
 	@Column(nullable = false)
 	private double price;
-	@OneToMany
+	@ManyToOne
 	@JoinTable(name="category_id")
 	private ProductCategory productCategory;
 	

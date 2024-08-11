@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class SaleItem {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="sale_item_id")
 	private Long saleItemId;
 	@Column(nullable = false)

@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class ProduckStock {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="product_stock_id")
 	private Long id;
 	@Column
